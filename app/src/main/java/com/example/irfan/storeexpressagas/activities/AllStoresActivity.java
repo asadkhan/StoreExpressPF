@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.irfan.storeexpressagas.R;
 import com.example.irfan.storeexpressagas.baseclasses.BaseActivity;
@@ -15,6 +17,8 @@ import com.example.irfan.storeexpressagas.extras.MenuHandler;
 
 public class AllStoresActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
+    ImageView img_shazz;
+    TextView  txt_shazz;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +35,13 @@ public class AllStoresActivity extends BaseActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_allstore);
         navigationView.setNavigationItemSelectedListener(this);
 
+        img_shazz = (ImageView) findViewById(R.id.img_shazz);
+
+        txt_shazz = (TextView) findViewById(R.id.txt_shazz);
+
+        img_shazz.setOnClickListener(this);
+
+        txt_shazz.setOnClickListener(this);
     }
 
     @Override
@@ -39,14 +50,14 @@ public class AllStoresActivity extends BaseActivity implements NavigationView.On
 
 
         switch (v.getId()) {
-            case R.id.actionbar_notifcation_img:
-                openActivity(CartActivity.class);
+            case R.id.img_shazz:
+                openActivity(MainActivity.class);
                 break;
 
-            case R.id.actionbar_notifcation_textview:
+            case R.id.txt_shazz:
                 Log.d("test","show msg call");
                 //  showMessageDailogNextScreen("test","testing message",Login.class);
-                openActivity(CartActivity.class);
+                openActivity(MainActivity.class);
                 break;
 
 
@@ -68,7 +79,7 @@ public class AllStoresActivity extends BaseActivity implements NavigationView.On
 
         } else if (id == R.id.menu_home) {
             mDrawerLayout.closeDrawers();
-            openActivity(MainActivity.class);
+            openActivity(AllStoresActivity.class);
             // MenuHandler.tracking(this);
 
         } else if (id == R.id.menu_cart) {

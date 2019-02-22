@@ -139,7 +139,7 @@ public class CartActivity extends BaseActivity implements NavigationView.OnNavig
 
         } else if (id == R.id.menu_home) {
             mDrawerLayout.closeDrawers();
-            openActivity(MainActivity.class);
+            openActivity(AllStoresActivity.class);
             // MenuHandler.tracking(this);
 
         } else if (id == R.id.menu_cart) {
