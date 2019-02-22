@@ -111,7 +111,7 @@
             android:layout_weight="1"
             android:background="@null"
             android:text="OK"
-            android:textColor="#ff0000" />
+            android:textColor="@color/colorPrimary" />
 
     </LinearLayout>
 

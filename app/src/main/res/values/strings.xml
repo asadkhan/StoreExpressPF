@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Agha\'s</string>
+    <string name="app_name">StoreXpress</string>
     <string name="strike_line">Don\'t have an account?</string>
     <string name="pass">Password</string>
     <string name="checkout_add">HOME\n141, 3rd Street, Off Khayaban-e-Rahat,\nPhase VI, DHA, Karachi</string>
@@ -23,5 +23,7 @@
     <string name="msg_add_to_car">Item Added To Cart</string>
     <string name="checkout_opt">2. American Garden Jalapeno\nPaper 454g x 1</string>
     <string name="my_order_reorder_opt">1. Loreum Ipsum Dolor\nRs. 645</string>
+    <string name="shazz">Shazz\nSupermarket</string>
+    <string name="coming">Comming\nSoon</string>
 
 </resources>

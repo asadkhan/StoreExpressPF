@@ -148,6 +148,7 @@
                                 android:id="@+id/imageView3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:tint="@color/colorPrimary"
                                 app:srcCompat="@mipmap/delivery" />
 
                             <TextView
@@ -165,7 +166,7 @@
                                 android:id="@+id/radioDelivery"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:buttonTint="#ff0000"
+                                android:buttonTint="@color/colorPrimary"
                                 android:tag="1"
                                 android:textSize="14sp" />
 
@@ -182,6 +183,7 @@
                                 android:id="@+id/imageView4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:tint="@color/colorPrimary"
                                 app:srcCompat="@mipmap/pickup" />
 
                             <TextView
@@ -199,7 +201,7 @@
                                 android:id="@+id/radioPickUp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:buttonTint="#ff0000"
+                                android:buttonTint="@color/colorPrimary"
                                 android:tag="2"
                                 android:textSize="14sp" />
 

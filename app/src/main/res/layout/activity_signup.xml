@@ -136,7 +136,7 @@
         android:background="@drawable/border_radius_invert"
         android:stateListAnimator="@null"
         android:text="Sign In"
-        android:textColor="#f90000"
+        android:textColor="@color/colorPrimary"
         android:textSize="14sp"
         tools:textAllCaps="false" />
 </LinearLayout>

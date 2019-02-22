@@ -30,7 +30,7 @@
         android:background="@drawable/badge_circle"
         android:padding="5dp"
         android:text="99"
-        android:textColor="#ff0000"
+        android:textColor="@color/colorPrimary"
         android:textSize="7sp"
         android:textStyle="bold" />
 

@@ -34,6 +34,7 @@
             android:layout_alignParentEnd="true"
             android:clickable="true"
             android:drawableRight="@mipmap/more"
+            android:drawableTint="@color/colorPrimary"
             android:text="View All   "
             android:textColor="@color/colorPrimary"
             android:textSize="12sp"

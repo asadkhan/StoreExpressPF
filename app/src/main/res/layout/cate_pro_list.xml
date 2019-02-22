@@ -98,7 +98,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="5dip"
                         android:adjustViewBounds="false"
-                        android:background="@mipmap/cart_mini" />
+                        android:background="@mipmap/cart_mini"
+                        android:backgroundTint="@color/colorPrimary" />
 
                     <TextView
                         android:id="@+id/txt_add"
@@ -200,7 +201,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="5dip"
                         android:adjustViewBounds="false"
-                        android:background="@mipmap/cart_mini" />
+                        android:background="@mipmap/cart_mini"
+                        android:backgroundTint="@color/colorPrimary" />
 
                     <TextView
                         android:id="@+id/txt_AddTwo"

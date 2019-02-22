@@ -4,9 +4,9 @@
     android:thickness="7dp"
     android:innerRadius="0dp">
     <solid
-        android:color="#FFe600"
+        android:color="#ffba00"
         />
     <stroke
-        android:width="2dip"
+        android:width="0dip"
         android:color="#FF0000" />
 </shape>

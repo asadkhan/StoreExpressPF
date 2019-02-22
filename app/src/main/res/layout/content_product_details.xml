@@ -159,6 +159,7 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:background="@mipmap/plus_s"
+                            android:backgroundTint="@color/colorPrimary"
                             android:text="@null" />
                     </LinearLayout>
 
@@ -190,6 +191,7 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:background="@mipmap/minus_s"
+                            android:backgroundTint="@color/colorPrimary"
                             android:text="@null" />
                     </LinearLayout>
 
