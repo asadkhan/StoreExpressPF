@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/circle_btn"
-            android:padding="10dip"
+            android:padding="10dp"
             android:tint="@color/colorPrimary"
             app:srcCompat="@mipmap/bakery" />
 
@@ -27,6 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dip"
             android:text="Bakery"
-            android:textSize="10sp" />
+            android:textSize="12sp"
+            android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>
