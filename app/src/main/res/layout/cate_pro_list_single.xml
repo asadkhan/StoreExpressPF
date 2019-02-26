@@ -28,10 +28,9 @@
 
                 <ImageView
                     android:id="@+id/imageView312"
-                    android:layout_width="90dip"
-                    android:layout_height="90dip"
-                    android:layout_marginTop="10dip"
-                    android:background="@drawable/product_shoe" />
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="@null" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -42,6 +41,7 @@
                         android:id="@+id/textView189"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:paddingBottom="5dip"
                         android:paddingTop="5dip"
                         android:text="Rs. "
@@ -65,12 +65,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:paddingEnd="10dp"
-                    android:paddingStart="10dp"
-                    android:paddingTop="5dip"
                     android:text="@string/pro_desc"
                     android:textColor="#555455"
-                    android:textSize="10sp"
+                    android:textSize="12sp"
                     android:textStyle="bold" />
 
                 <View

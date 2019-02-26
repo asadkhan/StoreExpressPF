@@ -66,12 +66,6 @@ public class ProductsListActivity extends BaseActivity implements NavigationView
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_product_list);
         navigationView.setNavigationItemSelectedListener(this);
 
-
-
-
-
-
-
         recyclerViewFProduct = (RecyclerView) findViewById(R.id.recycler_view_fProducts_list);
 
         mAdapterFproduct = new FproductListAdapter(this.producListTwoCol);

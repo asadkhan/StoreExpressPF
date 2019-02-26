@@ -86,7 +86,7 @@
                             android:minLines="3"
                             android:text="@string/shazz"
                             android:textColor="#555455"
-                            android:textSize="12sp"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
 
                     </LinearLayout>

@@ -28,7 +28,7 @@
                     android:id="@+id/img_product"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
-                    app:srcCompat="@drawable/product_shoe" />
+                    app:srcCompat="@null" />
             </LinearLayout>
 
             <View

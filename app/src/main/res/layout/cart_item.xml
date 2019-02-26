@@ -26,9 +26,8 @@
             <ImageView
                 android:id="@+id/cartitem_img"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                app:srcCompat="@drawable/product_shoe" />
+                android:layout_height="80dip"
+                android:adjustViewBounds="true" />
         </LinearLayout>
 
         <LinearLayout

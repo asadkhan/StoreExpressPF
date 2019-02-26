@@ -41,8 +41,8 @@ public class FproductListAdapter  extends RecyclerView.Adapter<FproductListAdapt
             img1 = (ImageView) view.findViewById(R.id.Img_Product1);
             img2 = (ImageView) view.findViewById(R.id.ImgProduct2);
 
-            TxtPrice1 = (TextView) view.findViewById(R.id.txt_price1);
-            TxtPrice2 = (TextView) view.findViewById(R.id.txt_price2);
+            TxtPrice1 = (TextView) view.findViewById(R.id.txt_price3);
+            TxtPrice2 = (TextView) view.findViewById(R.id.txt_price);
             TxtName1 = (TextView) view.findViewById(R.id.txt_name1);
             TxtName2 = (TextView) view.findViewById(R.id.txt_name2);
             TxtAddToCart=(TextView) view.findViewById(R.id.txt_add);
