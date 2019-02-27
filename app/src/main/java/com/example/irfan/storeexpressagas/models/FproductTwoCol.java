@@ -11,5 +11,6 @@ public class FproductTwoCol {
  public int ProducttwoID;
     public String ProductoneImg;
     public String ProducttwoImg;
-
+    public String ProductoneDesc;
+    public String ProducttwoDesc;
 }

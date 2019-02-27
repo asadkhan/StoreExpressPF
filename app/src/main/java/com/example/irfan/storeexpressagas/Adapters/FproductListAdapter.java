@@ -72,11 +72,14 @@ public class FproductListAdapter  extends RecyclerView.Adapter<FproductListAdapt
                 obj.name=mobj.ProductoneName;
                 obj.price=mobj.ProductonePrice;
                 obj.itemID=mobj.ProductoneID;
+                obj.desc=mobj.ProductoneDesc;
+
+                Log.d("test", mobj.ProductoneDesc);
                 ProductActivity.obj=null;
                 ProductActivity.obj=obj;
                 ActivityManager.startActivity(view.getContext(),ProductActivity.class);
 
-                Log.d("test:", "image view click");
+
             }
 
             if(view.getId()==R.id.ImgProduct2  ) {
@@ -88,6 +91,8 @@ public class FproductListAdapter  extends RecyclerView.Adapter<FproductListAdapt
 
                 obj.name=mobj.ProducttwoName;
                 obj.price=mobj.ProducttwoPrice;
+                obj.desc=mobj.ProducttwoDesc;
+                Log.d("test:", mobj.ProducttwoDesc);
                 ProductActivity.obj=null;
                 ProductActivity.obj=obj;
                 ActivityManager.startActivity(view.getContext(),ProductActivity.class);

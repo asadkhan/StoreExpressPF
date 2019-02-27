@@ -284,6 +284,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                             obj.ProductoneName=iList.get(i).getName();
                             obj.ProductonePrice=iList.get(i).getPrice();
                             obj.ProductoneImg= iList.get(i).getImage();
+                            obj.ProductoneDesc=iList.get(i).getDescription().toString();
 
                             if((i+1)<iList.size()){
 
@@ -292,6 +293,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                                 obj.ProducttwoImg=iList.get((i+1)).getImage();
                                 obj.ProducttwoImg=iList.get((i+1)).getImage();
                                 obj.ProducttwoID=iList.get(i+1).getId();
+                                obj.ProducttwoDesc=iList.get(i+1).getDescription().toString();
 
 
                             }
@@ -360,6 +362,9 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                             obj.ProductoneName=iList.get(i).getName();
                             obj.ProductonePrice=iList.get(i).getPrice();
                             obj.ProductoneImg= iList.get(i).getImage();
+                            obj.ProductoneImg= iList.get(i).getImage();
+                            obj.ProductoneDesc=iList.get(i).getDescription().toString();
+
 
                             if((i+1)<iList.size()){
 
@@ -368,6 +373,9 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                                 obj.ProducttwoImg=iList.get((i+1)).getImage();
                                 obj.ProducttwoImg=iList.get((i+1)).getImage();
                                 obj.ProducttwoID=iList.get(i+1).getId();
+                                obj.ProducttwoDesc=iList.get(i+1).getDescription().toString();
+
+                                Log.d("test",iList.get(i+1).getDescription().toString());
 
 
                             }
