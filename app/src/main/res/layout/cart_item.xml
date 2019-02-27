@@ -55,13 +55,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
+                android:visibility="invisible"
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btn_cart_plus"
+                    android:id="@+id/btn_cartitem_minus"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:background="@mipmap/plus_s"
+                    android:background="@mipmap/minus_s"
                     android:backgroundTint="@color/colorPrimary"
                     android:fadeScrollbars="false"
                     android:includeFontPadding="false"
@@ -78,10 +79,10 @@
                     android:textColor="#555455" />
 
                 <Button
-                    android:id="@+id/btn_cartitem_minus"
+                    android:id="@+id/btn_cart_plus"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:background="@mipmap/minus_s"
+                    android:background="@mipmap/plus_s"
                     android:backgroundTint="@color/colorPrimary"
                     android:fadeScrollbars="false"
                     android:includeFontPadding="false"
