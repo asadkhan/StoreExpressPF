@@ -15,9 +15,7 @@
         android:paddingBottom="10dp"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:paddingTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:paddingTop="10dp">
 
         <TextView
             android:id="@+id/textView10"
@@ -42,16 +40,6 @@
 
     </RelativeLayout>
 
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#F7F5F5"
-        android:scrollbars="none"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/relativeLayout"
-        app:layout_constraintTop_toTopOf="@+id/relativeLayout">
-
-    </HorizontalScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -62,38 +50,60 @@
         android:paddingStart="10dp"
         android:paddingTop="10dp">
 
-
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_view_cat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/grey_bg"/>
-
-    </LinearLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:baselineAligned="false"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:gravity="center_vertical|center_horizontal|center"
+            android:orientation="vertical"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp">
 
-
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_view_fProducts"
-                android:layout_width="match_parent"
+            <ImageButton
+                android:id="@+id/imgCat"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:scrollbars="vertical"
-                android:background="@color/grey_bg"/>
+                android:background="@drawable/circle_btn"
+                android:padding="10dp"
+                android:tint="@color/colorPrimary"
+                app:srcCompat="@mipmap/featured" />
 
+            <TextView
+                android:id="@+id/txtCat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:text="All"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
-    </ScrollView>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_cat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/grey_bg">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_fProducts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            android:background="@color/grey_bg"/>
+
+
+    </LinearLayout>
+
 </LinearLayout>
