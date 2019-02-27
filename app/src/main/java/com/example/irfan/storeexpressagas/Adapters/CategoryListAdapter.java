@@ -2,6 +2,7 @@ package com.example.irfan.storeexpressagas.Adapters;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,7 +25,7 @@ import java.util.List;
 
 public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapter.ListViewHolder> {
 
-
+public int row_index=-1;
     private Context mContext;
     private AdapterCallback.OnItemClickListener clickListener;
     private List<CategoryResponse.catValue> categories;
@@ -49,6 +50,11 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
         @Override
         public void onClick(View view) {
              clickListener.onClick(view, getPosition());
+
+            row_index=getPosition();
+
+            notifyDataSetChanged();
+
         }
 
 
@@ -69,6 +75,8 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.cate_list, parent, false);
 
+        mContext = parent.getContext();
+
         return new ListViewHolder(itemView);
     }
 
@@ -81,8 +89,22 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
 
         Picasso.with(holder.catImg.getContext()).load(imgURL).resize(80, 80).centerCrop().into(holder.catImg);
 
-        // formatting the date appropriately.
 
+
+        // formatting the date appropriately.
+        if(row_index==position){
+            holder.txtCatName.setTypeface(null, Typeface.BOLD);
+           holder.catImg.setColorFilter(Color.argb(255, 255, 255, 255));
+            holder.catImg.setBackground(mContext.getResources().getDrawable(R.drawable.circle_btn_invert,null));
+        }
+        else
+        {
+            holder.txtCatName.setTypeface(null, Typeface.NORMAL);
+            holder.catImg.setColorFilter(Color.argb(255, 13, 92, 173));
+            holder.catImg.setBackground(mContext.getResources().getDrawable(R.drawable.circle_btn,null));
+           // holder.txtCatName.setBackgroundColor(Color.parseColor("#ffffff"));
+           // holder.catImg.setTextColor(Color.parseColor("#000000"));
+        }
 
     }
 
