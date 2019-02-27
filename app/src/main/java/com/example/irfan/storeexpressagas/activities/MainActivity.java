@@ -145,17 +145,25 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     public void onClick(View view, int position) {
         Log.d("test","Click iterface ");
        CategoryResponse.catValue cat = catList.get(position);
-        getProductsByCat(cat.getName());
-        Log.d("test",cat.getName());
+
+       if(cat.getName().toString().trim().equals("All")){
+           getFproducts();
+       }
+       else {
+           getProductsByCat(cat.getName());
+       }
+       Log.d("test",cat.getName());
     }
     public void getCategories(){
         showProgress();
-        Log.d("test","intest");
+        Log.d("test","intestCat");
         RestClient.getAuthAdapter().getCategories().enqueue(new GeneralCallBack<CategoryResponse>(this) {
             @Override
             public void onSuccess(CategoryResponse response) {
 
                 hideProgress();
+
+
 
                 if (!response.getIserror()) {
 
@@ -165,12 +173,60 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                     List<CategoryResponse.catValue> list = response.getValue();
                     for(CategoryResponse.catValue obj : list){
 
+
                         Log.d("test",obj.getName());
-                        Log.d("test",obj.getImage());
-                        catList.add(obj);
+
+
+                        if(obj.getName().toString().trim().equals("All")) {
+                            Log.d("test","FOUND");
+                            catList.add(obj);
+                            break;
+                        }
+
+
+
+                    }
+
+                    for(CategoryResponse.catValue obj2 : list){
+
+
+
+
+
+                        if(obj2.getName().toString().trim().equals("All")) {
+                            Log.d("test","FOUND");
+                            //catList.add(obj2);
+
+                        }
+                        else {
+
+                            catList.add(obj2);
+
+                        }
+
+
+
                     }
 
 
+
+                    /*
+                    for(CategoryResponse.catValue obj : list){
+
+
+                        Log.d("test",obj.getName());
+
+
+                        if(obj.getName().toString().trim().equals("All")) {
+                            Log.d("test","FOUNDAGAIN");
+                        }
+                        else{
+
+                            catList.add(obj);
+                        }
+
+                    }
+*/
 
 
                     mAdapterCat.notifyDataSetChanged();
@@ -361,12 +417,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         DrawerLayout   mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (id == R.id.menu_about) {
-            // Handle the camera action
-            mDrawerLayout.closeDrawers();
-            openActivityWithFinish(AboutActivity.class);
-
-        } else if (id == R.id.menu_home) {
+         if (id == R.id.menu_home) {
             mDrawerLayout.closeDrawers();
             openActivity(AllStoresActivity.class);
             // MenuHandler.tracking(this);

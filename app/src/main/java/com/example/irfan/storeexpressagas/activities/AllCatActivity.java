@@ -116,12 +116,7 @@ getCategories();
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         DrawerLayout   mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout_allcat);
-        if (id == R.id.menu_about) {
-            // Handle the camera action
-            mDrawerLayout.closeDrawers();
-            openActivityWithFinish(AboutActivity.class);
-
-        } else if (id == R.id.menu_home) {
+        if (id == R.id.menu_home) {
             mDrawerLayout.closeDrawers();
             openActivity(AllStoresActivity.class);
             // MenuHandler.tracking(this);

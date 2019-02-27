@@ -55,6 +55,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_vertical|center_horizontal|center"
             android:orientation="vertical"
+            android:visibility="gone"
             android:paddingEnd="5dp"
             android:paddingStart="5dp">
 
