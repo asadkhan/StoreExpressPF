@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.irfan.storeexpressagas.Adapters.CategoryListAdapter;
 import com.example.irfan.storeexpressagas.Adapters.FproductListAdapter;
@@ -104,7 +105,12 @@ public class ProductsListActivity extends BaseActivity implements NavigationView
 
     }
 
+    public void UpdateCardCount(){
+        tv.setText(String.valueOf(Cart.getCartTotalItem(this)));
+        Toast.makeText(getApplicationContext(), String.valueOf(Cart.getCartTotalItem(this)),
+                Toast.LENGTH_LONG).show();
 
+    }
 
 
     public void getFproducts(){

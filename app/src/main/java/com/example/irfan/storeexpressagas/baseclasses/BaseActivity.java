@@ -349,7 +349,7 @@ public class BaseActivity extends AppCompatActivity {
         System.exit(0);
     }
 
-    private void logOut(){
+    public void logOut(){
 
 
 
@@ -359,4 +359,13 @@ public class BaseActivity extends AppCompatActivity {
         databaseHelper.removeCartItems();
        // openActivity(Login.class);
     }
+
+    public static String RemoveSpecialChar(String input){
+        String output;
+
+
+        output= input.replaceAll("[-+.^:,]","");
+        return output;
+    }
+
 }

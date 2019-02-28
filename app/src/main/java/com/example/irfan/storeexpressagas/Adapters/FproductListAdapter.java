@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.irfan.storeexpressagas.R;
 import com.example.irfan.storeexpressagas.activities.MainActivity;
 import com.example.irfan.storeexpressagas.activities.ProductActivity;
+import com.example.irfan.storeexpressagas.activities.ProductsListActivity;
 import com.example.irfan.storeexpressagas.baseclasses.BaseActivity;
 import com.example.irfan.storeexpressagas.extras.ActivityManager;
 import com.example.irfan.storeexpressagas.extras.UpdateCart;
@@ -119,7 +120,7 @@ public class FproductListAdapter  extends RecyclerView.Adapter<FproductListAdapt
                     item.ItemID=mobj.ProductoneID;
                     item.ItemName=mobj.ProductoneName;
                     item.ItemImg=mobj.ProductoneImg;
-                    item.ItemPrice=Integer.valueOf(mobj.ProductonePrice);
+                    item.ItemPrice=Integer.valueOf(BaseActivity.RemoveSpecialChar(mobj.ProductonePrice));
                     item.ItemQty=1;
 
 
@@ -131,7 +132,14 @@ public class FproductListAdapter  extends RecyclerView.Adapter<FproductListAdapt
                 Toast.makeText(view.getContext(),view.getResources().getString(R.string.msg_add_to_car) ,
                         Toast.LENGTH_LONG).show();
 
-                ((MainActivity) view.getContext()).UpdateCardCount();
+                if(view.getContext() instanceof MainActivity){
+    ((MainActivity) view.getContext()).UpdateCardCount();
+                }
+
+                if(view.getContext() instanceof ProductsListActivity){
+                    ((ProductsListActivity) view.getContext()).UpdateCardCount();
+                }
+
 
             }
 
@@ -145,7 +153,7 @@ public class FproductListAdapter  extends RecyclerView.Adapter<FproductListAdapt
                     item.ItemID=mobj.ProducttwoID;
                     item.ItemName=mobj.ProducttwoName;
                     item.ItemImg=mobj.ProducttwoImg;
-                    item.ItemPrice=Integer.valueOf(mobj.ProducttwoPrice);
+                    item.ItemPrice=Integer.valueOf(BaseActivity.RemoveSpecialChar(mobj.ProducttwoPrice));
                     item.ItemQty=1;
 
 
@@ -155,7 +163,16 @@ public class FproductListAdapter  extends RecyclerView.Adapter<FproductListAdapt
                 //showMessageToast(view.getResources().getString(R.string.msg_add_to_car));
                 Toast.makeText(view.getContext(),view.getResources().getString(R.string.msg_add_to_car) ,
                         Toast.LENGTH_LONG).show();
-                ((MainActivity) view.getContext()).UpdateCardCount();
+                if(view.getContext() instanceof MainActivity){
+                    ((MainActivity) view.getContext()).UpdateCardCount();
+
+
+                }
+
+
+                if(view.getContext() instanceof ProductsListActivity){
+                    ((ProductsListActivity) view.getContext()).UpdateCardCount();
+                }
             }
 
 
