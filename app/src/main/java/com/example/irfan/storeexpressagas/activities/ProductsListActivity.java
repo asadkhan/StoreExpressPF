@@ -29,14 +29,15 @@ import com.example.irfan.storeexpressagas.models.FproductResponse;
 import com.example.irfan.storeexpressagas.models.FproductTwoCol;
 import com.example.irfan.storeexpressagas.network.RestClient;
 import com.google.gson.Gson;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProductsListActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener,
         View.OnClickListener {
-    public TextView tv;
-    public ImageView i;
+    public TextView tv,cat_name;
+    public ImageView i,cat_img;
 
 
     public RecyclerView recyclerViewFProduct;
@@ -44,6 +45,7 @@ public class ProductsListActivity extends BaseActivity implements NavigationView
     public FproductListAdapter mAdapterFproduct;
 
     public static String catName;
+    public static String catImg;
 
     public   List<FproductTwoCol> producListTwoCol = new ArrayList<>();
 
@@ -92,6 +94,12 @@ public class ProductsListActivity extends BaseActivity implements NavigationView
         //recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerViewFProduct.setAdapter(this.mAdapterFproduct);
 
+        cat_img=(ImageView) findViewById(R.id.cat_img);
+        cat_name=(TextView) findViewById(R.id.cat_name);
+
+        cat_name.setText(ProductsListActivity.catName);
+
+        Picasso.with(this).load(ProductsListActivity.catImg).resize(60, 60).centerCrop().into(cat_img);
 
 
 
@@ -99,9 +107,15 @@ public class ProductsListActivity extends BaseActivity implements NavigationView
 
         // test();
 
-        getProductsByCat();
+        if(ProductsListActivity.catName.trim().equals("All")) {
 
+            getALLProducts();
+        }
+        else {
 
+            getProductsByCat();
+
+        }
 
     }
 
@@ -264,6 +278,83 @@ public class ProductsListActivity extends BaseActivity implements NavigationView
 
     }
 
+
+
+
+    public void getALLProducts(){
+
+        showProgress();
+        Log.d("test","intestFproduct");
+        RestClient.getAuthAdapter().getFeaturepProducts().enqueue(new GeneralCallBack<FproductResponse>(this) {
+            @Override
+            public void onSuccess(FproductResponse response) {
+
+                Gson gson = new Gson();
+                String Reslog= gson.toJson(response);
+                Log.d("test", Reslog);
+                producListTwoCol.clear();
+
+                if (!response.getIserror()) {
+
+                    List<FproductResponse.Value> iList = response.getValue();
+
+                    for(int i=0; i< iList.size();i+=2){
+
+                        if(i<iList.size()){
+                            FproductTwoCol obj = new FproductTwoCol();
+                            obj.ProductoneID=iList.get(i).getId();
+
+                            Log.d("test",String.valueOf(iList.get(i).getId()));
+                            obj.ProductoneName=iList.get(i).getName();
+                            obj.ProductonePrice=iList.get(i).getPrice();
+                            obj.ProductoneImg= iList.get(i).getImage();
+
+                            if((i+1)<iList.size()){
+
+                                obj.ProducttwoName=iList.get((i+1)).getName();
+                                obj.ProducttwoPrice=iList.get((i+1)).getPrice();
+                                obj.ProducttwoImg=iList.get((i+1)).getImage();
+                                obj.ProducttwoImg=iList.get((i+1)).getImage();
+                                obj.ProducttwoID=iList.get(i+1).getId();
+
+
+                            }
+
+                            producListTwoCol.add(obj);
+
+                        }
+
+
+
+
+
+                    }
+                    mAdapterFproduct.notifyDataSetChanged();
+
+
+                }
+
+
+
+                hideProgress();
+
+
+
+            }
+
+            @Override
+            public void onFailure(Throwable throwable) {
+                //onFailure implementation would be in GeneralCallBack class
+                hideProgress();
+                Log.d("test","failed");
+
+            }
+
+
+
+        });
+
+    }
 
 
 

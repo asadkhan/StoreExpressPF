@@ -212,11 +212,49 @@ getCategories();
 
                     catList.clear();
                     List<CategoryResponse.catValue> list = response.getValue();
+
                     for(CategoryResponse.catValue obj : list){
 
 
-                        catList.add(obj);
+
+
+
+                        if(obj.getName().toString().trim().equals("All")) {
+
+                            catList.add(obj);
+                            break;
+                        }
+
+
+
                     }
+
+                    for(CategoryResponse.catValue obj2 : list){
+
+
+
+
+
+                        if(obj2.getName().toString().trim().equals("All")) {
+
+                            //catList.add(obj2);
+
+                        }
+                        else {
+
+                            catList.add(obj2);
+
+                        }
+
+
+
+                    }
+
+
+
+
+
+
 
 
 

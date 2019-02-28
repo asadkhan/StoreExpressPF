@@ -26,16 +26,17 @@ public class CategoryListAllCatAdapter  extends RecyclerView.Adapter<CategoryLis
 
     private List<CategoryResponse.catValue> categories;
     public class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public Button btnallcat;
-
+        public TextView btnallcat;
+        public ImageView btn_allcat_img;
         private String mItem;
 
         public ListViewHolder(View view) {
             super(view);
-           // view.setOnClickListener(this);
+            view.setOnClickListener(this);
 
-            btnallcat = (Button) view.findViewById(R.id.btn_allcat);
-            btnallcat.setOnClickListener(this);
+            btnallcat = (TextView) view.findViewById(R.id.btn_allcat);
+            btn_allcat_img=(ImageView) view.findViewById(R.id.btn_allcat_img);
+            //btnallcat.setOnClickListener(this);
         }
 
 
@@ -46,6 +47,7 @@ public class CategoryListAllCatAdapter  extends RecyclerView.Adapter<CategoryLis
             CategoryResponse.catValue obj =categories.get(getPosition());
 
             ProductsListActivity.catName=obj.getName();
+            ProductsListActivity.catImg=obj.getImage();
             ActivityManager.startActivity(view.getContext(),ProductsListActivity.class);
 
 
@@ -80,7 +82,7 @@ public class CategoryListAllCatAdapter  extends RecyclerView.Adapter<CategoryLis
         String imgURL=catObj.getImage();
         holder.btnallcat.setText(catObj.getName());
 
-        //Picasso.with(holder.catImg.getContext()).load(imgURL).resize(60, 60).centerCrop().into(holder.catImg);
+        Picasso.with(holder.btn_allcat_img.getContext()).load(imgURL).resize(60, 60).centerCrop().into(holder.btn_allcat_img);
 
         // formatting the date appropriately.
 
