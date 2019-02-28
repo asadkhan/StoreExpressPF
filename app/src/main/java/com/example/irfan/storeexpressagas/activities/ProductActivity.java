@@ -52,7 +52,7 @@ public class ProductActivity extends BaseActivity implements NavigationView.OnNa
         btnMinus.setOnClickListener(this);
         btn_add_to_cart.setOnClickListener(this);
 
-        Picasso.with(this).load(obj.img).resize(250, 250).centerCrop().into(img);
+        Picasso.with(this).load(obj.img).resize(350, 350).centerCrop().into(img);
         name.setText(obj.name);
         price.setText(obj.price);
         description.setText(obj.desc);
