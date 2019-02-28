@@ -57,6 +57,7 @@ public class ProductActivity extends BaseActivity implements NavigationView.OnNa
         price.setText(obj.price);
         description.setText(obj.desc);
 
+        obj.price=RemoveSpecialChar(obj.price);
        // description.setText(obj.getDescription().toString());
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_about_product);
         setSupportActionBar(toolbar);
