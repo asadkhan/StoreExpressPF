@@ -38,6 +38,17 @@ public class OrdersActivity extends BaseActivity implements NavigationView.OnNav
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_orders);
         navigationView.setNavigationItemSelectedListener(this);
+        Menu menu =navigationView.getMenu();
+
+        MenuItem target = menu.findItem(R.id.menu_logout);
+
+        if(sharedperference.getToken()==null || sharedperference.getToken()=="") {
+            target.setVisible(false);
+        }
+        else{
+
+            target.setVisible(true);
+        }
 
 
     }

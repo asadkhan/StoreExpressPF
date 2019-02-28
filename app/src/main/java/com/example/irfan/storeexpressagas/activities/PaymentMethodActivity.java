@@ -64,6 +64,20 @@ public List<AddressResponse.Value> adddressLst = new ArrayList<>();
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_paymentmethod);
         navigationView.setNavigationItemSelectedListener(this);
+
+    Menu menu =navigationView.getMenu();
+
+    MenuItem target = menu.findItem(R.id.menu_logout);
+
+    if(sharedperference.getToken()==null || sharedperference.getToken()=="") {
+        target.setVisible(false);
+    }
+    else{
+
+        target.setVisible(true);
+    }
+
+
     recyclerViewAdress = (RecyclerView) findViewById(R.id.recycler_view_adresses);
 
     mAdapter = new AddressListAdapter(this.adddressLst);

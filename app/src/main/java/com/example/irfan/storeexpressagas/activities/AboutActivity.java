@@ -39,6 +39,17 @@ public class AboutActivity extends BaseActivity implements NavigationView.OnNavi
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_about);
         navigationView.setNavigationItemSelectedListener(this);
+        Menu menu =navigationView.getMenu();
+
+        MenuItem target = menu.findItem(R.id.menu_logout);
+
+        if(sharedperference.getToken()==null || sharedperference.getToken()=="") {
+            target.setVisible(false);
+        }
+        else{
+
+            target.setVisible(true);
+        }
 
 
     }
@@ -108,6 +119,7 @@ public class AboutActivity extends BaseActivity implements NavigationView.OnNavi
 
         else if (id == R.id.menu_logout) {
             MenuHandler.logOut(this);
+           
         }
 
 

@@ -26,6 +26,7 @@ import com.example.irfan.storeexpressagas.activities.OrdersActivity;
 import com.example.irfan.storeexpressagas.activities.ProductRequestActivity;
 import com.example.irfan.storeexpressagas.activities.ProfileActivity;
 import com.example.irfan.storeexpressagas.extras.Auth;
+import com.example.irfan.storeexpressagas.extras.DeviceDatabaseHandler;
 import com.example.irfan.storeexpressagas.extras.PrefManager;
 import com.example.irfan.storeexpressagas.extras.ProgressLoader;
 import com.example.irfan.storeexpressagas.models.Cart;
@@ -350,7 +351,12 @@ public class BaseActivity extends AppCompatActivity {
 
     private void logOut(){
 
+
+
         sharedperference.removeALL();
+
+        DeviceDatabaseHandler databaseHelper = DeviceDatabaseHandler.getInstance(this);
+        databaseHelper.removeCartItems();
        // openActivity(Login.class);
     }
 }

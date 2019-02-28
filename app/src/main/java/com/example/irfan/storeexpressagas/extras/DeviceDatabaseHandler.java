@@ -163,6 +163,12 @@ return cartItem;
 
     }
 
+    public void removeCartItems() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_NAME);
+        db.close();
+    }
+
     public void removeCartItem(int ItemID ) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_NAME, CART_ITEM_ID + " = ?",
@@ -181,6 +187,7 @@ return cartItem;
         cursor.close();
         return count;
     }
+
 
 
 

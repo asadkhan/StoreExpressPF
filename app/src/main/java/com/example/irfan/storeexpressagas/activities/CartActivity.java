@@ -63,6 +63,19 @@ boolean IsCheckout=true;
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_cart);
         navigationView.setNavigationItemSelectedListener(this);
 
+        Menu menu =navigationView.getMenu();
+
+        MenuItem target = menu.findItem(R.id.menu_logout);
+
+        if(sharedperference.getToken()==null || sharedperference.getToken()=="") {
+            target.setVisible(false);
+        }
+        else{
+
+            target.setVisible(true);
+        }
+
+
         recyclerViewCart = (RecyclerView) findViewById(R.id.recycler_view_cart);
         txt_totalItem=(TextView) findViewById(R.id.txt_totalItem);
         txt_totalprice=(TextView) findViewById(R.id.txt_totalprice);

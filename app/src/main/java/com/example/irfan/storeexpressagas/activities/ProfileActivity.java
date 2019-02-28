@@ -54,6 +54,18 @@ public class ProfileActivity extends BaseActivity implements NavigationView.OnNa
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_profile);
         navigationView.setNavigationItemSelectedListener(this);
 
+        Menu menu =navigationView.getMenu();
+
+        MenuItem target = menu.findItem(R.id.menu_logout);
+
+        if(sharedperference.getToken()==null || sharedperference.getToken()=="") {
+            target.setVisible(false);
+        }
+        else{
+
+            target.setVisible(true);
+        }
+
         test();
     }
 

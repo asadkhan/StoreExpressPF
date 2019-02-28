@@ -75,6 +75,18 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         navigationView.setNavigationItemSelectedListener(this);
 
 
+        Menu menu =navigationView.getMenu();
+
+        MenuItem target = menu.findItem(R.id.menu_logout);
+
+        if(sharedperference.getToken()==null || sharedperference.getToken()=="") {
+            target.setVisible(false);
+        }
+        else{
+
+            target.setVisible(true);
+        }
+
         recyclerViewCat = (RecyclerView) findViewById(R.id.recycler_view_cat);
 
         mAdapterCat = new CategoryListAdapter(this.catList);

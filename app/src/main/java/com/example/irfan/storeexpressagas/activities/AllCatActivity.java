@@ -61,6 +61,18 @@ public class AllCatActivity extends BaseActivity implements NavigationView.OnNav
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_allcat);
         navigationView.setNavigationItemSelectedListener(this);
 
+        Menu menu =navigationView.getMenu();
+
+        MenuItem target = menu.findItem(R.id.menu_logout);
+
+        if(sharedperference.getToken()==null || sharedperference.getToken()=="") {
+            target.setVisible(false);
+        }
+        else{
+
+            target.setVisible(true);
+        }
+
 
         recyclerViewAllCat = (RecyclerView) findViewById(R.id.recycler_view_allcat);
 

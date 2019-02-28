@@ -80,6 +80,18 @@ public RadioButton rBtndelivery,rBtnPickUp;
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_checkoutf);
         navigationView.setNavigationItemSelectedListener(this);
 
+        Menu menu =navigationView.getMenu();
+
+        MenuItem target = menu.findItem(R.id.menu_logout);
+
+        if(sharedperference.getToken()==null || sharedperference.getToken()=="") {
+            target.setVisible(false);
+        }
+        else{
+
+            target.setVisible(true);
+        }
+
         recyclerViewCheckoutItem = (RecyclerView) findViewById(R.id.recycler_view_checkoutItem);
 
         mAdapterCheckoutitem = new CheckOutCartItemAdapter(this.cartItemList);
