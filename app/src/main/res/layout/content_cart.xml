@@ -179,6 +179,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
+            <TextView
+                android:id="@+id/lbl_emptymsg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Cart is Empty!"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
         </LinearLayout>
     </ScrollView>
 

@@ -38,10 +38,10 @@ public class CartActivity extends BaseActivity implements NavigationView.OnNavig
 
     public CartItemListAdapter mAdapterCart;
     public Button btnCheckout;
-
+boolean IsCheckout=true;
     public PrefManager sharedperference;
     public List<Cart> cartItemList = new ArrayList<>();
-    public TextView tv,txt_totalItem,txt_totalprice;
+    public TextView tv,txt_totalItem,txt_totalprice,lbl_emptymsg;
     public ImageView i;
 
 
@@ -66,6 +66,9 @@ public class CartActivity extends BaseActivity implements NavigationView.OnNavig
         recyclerViewCart = (RecyclerView) findViewById(R.id.recycler_view_cart);
         txt_totalItem=(TextView) findViewById(R.id.txt_totalItem);
         txt_totalprice=(TextView) findViewById(R.id.txt_totalprice);
+        lbl_emptymsg=(TextView) findViewById(R.id.lbl_emptymsg);
+
+
 
 
         mAdapterCart = new CartItemListAdapter(this.cartItemList);
@@ -84,6 +87,7 @@ public class CartActivity extends BaseActivity implements NavigationView.OnNavig
         txt_totalItem.setText(String.valueOf(Cart.getCartTotalItem(this)));
         Log.d("test",String.valueOf(String.valueOf(Cart.getCartTotalPrice(this))));
         txt_totalprice.setText(String.valueOf(Cart.getCartTotalPrice(this)));
+        updateCheckoutButton(Cart.getCartTotalItem(this));
     }
 
     @Override
@@ -91,8 +95,9 @@ public class CartActivity extends BaseActivity implements NavigationView.OnNavig
 
         switch (v.getId()) {
             case R.id.btn_checkout:
-
-                checkOut();
+                if(IsCheckout) {
+                    checkOut();
+                }
                 break;
             case R.id.actionbar_notifcation_img:
                 openActivity(CartActivity.class);
@@ -113,6 +118,30 @@ public class CartActivity extends BaseActivity implements NavigationView.OnNavig
         tv.setText(String.valueOf(Cart.getCartTotalItem(this)));
         txt_totalItem.setText(String.valueOf(Cart.getCartTotalItem(this)));
         txt_totalprice.setText(String.valueOf(Cart.getCartTotalPrice(this)));
+        updateCheckoutButton(Cart.getCartTotalItem(this));
+    }
+
+
+    public void updateCheckoutButton (int itemCount){
+
+
+        if(itemCount <1){
+
+            IsCheckout=false;
+            btnCheckout.setTextColor(getResources().getColor(R.color.light_grey));
+            btnCheckout.setBackground(getResources().getDrawable(R.drawable.border_radius_invert));
+            recyclerViewCart.setVisibility(View.GONE);
+            lbl_emptymsg.setVisibility(View.VISIBLE);
+        }
+        else{
+            IsCheckout=true;
+            btnCheckout.setTextColor(getResources().getColor(R.color.colorAccent));
+            btnCheckout.setBackground(getResources().getDrawable(R.drawable.border_radius_red));
+            recyclerViewCart.setVisibility(View.VISIBLE);
+            lbl_emptymsg.setVisibility(View.GONE);
+
+        }
+
 
     }
 
