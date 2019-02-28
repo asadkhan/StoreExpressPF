@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/btn_allcat"
+        android:id="@+id/btn_allcat_"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="-5dip"
@@ -32,7 +32,7 @@
         android:weightSum="10">
 
         <ImageView
-            android:id="@+id/imageView12"
+            android:id="@+id/btn_allcat_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -40,7 +40,7 @@
             android:tint="@color/colorPrimary" />
 
         <TextView
-            android:id="@+id/textView25"
+            android:id="@+id/btn_allcat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="8"
