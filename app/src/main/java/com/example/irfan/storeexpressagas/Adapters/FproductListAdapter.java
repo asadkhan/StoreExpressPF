@@ -33,7 +33,7 @@ public class FproductListAdapter  extends RecyclerView.Adapter<FproductListAdapt
     public class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public ImageView img1,img2;
         public TextView TxtPrice1,TxtPrice2,TxtName1,TxtName2,TxtAddToCart,TxtAddToCartTwo;
-       public LinearLayout Ladd ,Ladd1 ;
+       public LinearLayout Ladd ,Ladd1, LproductTwo, LproductOne ;
 
         private String mItem;
 
@@ -52,6 +52,10 @@ public class FproductListAdapter  extends RecyclerView.Adapter<FproductListAdapt
             TxtAddToCartTwo=(TextView) view.findViewById(R.id.txt_AddTwo);
              Ladd = (LinearLayout )view.findViewById(R.id.ladd);
             Ladd1 = (LinearLayout )view.findViewById(R.id.ladd);
+            LproductOne = (LinearLayout )view.findViewById(R.id.LproductOne);
+
+            LproductTwo = (LinearLayout )view.findViewById(R.id.LproductTwo);
+
             Ladd.setOnClickListener(this);
             Ladd1.setOnClickListener(this);
             img1.setOnClickListener(this);
@@ -219,6 +223,19 @@ public class FproductListAdapter  extends RecyclerView.Adapter<FproductListAdapt
         Picasso.with(holder.img2.getContext()).load(imgURL2).resize(800, 800).centerCrop().into(holder.img2);
 
         // formatting the date appropriately.
+
+        if(Obj.ProductoneName  == null){
+
+            holder.LproductOne.setVisibility(View.GONE);
+
+        }
+
+        if(Obj.ProducttwoName == null ){
+
+            holder.LproductTwo.setVisibility(View.GONE);
+
+        }
+
 
 
     }
