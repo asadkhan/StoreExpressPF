@@ -226,13 +226,13 @@ public class FproductListAdapter  extends RecyclerView.Adapter<FproductListAdapt
 
         if(Obj.ProductoneName  == null){
 
-            holder.LproductOne.setVisibility(View.GONE);
+            holder.LproductOne.setVisibility(View.INVISIBLE);
 
         }
 
         if(Obj.ProducttwoName == null ){
 
-            holder.LproductTwo.setVisibility(View.GONE);
+            holder.LproductTwo.setVisibility(View.INVISIBLE);
 
         }
 
