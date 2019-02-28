@@ -135,7 +135,7 @@ public class ProductActivity extends BaseActivity implements NavigationView.OnNa
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        DrawerLayout   mDrawerLayout = (DrawerLayout) findViewById(R.id.nav_view_product_details);
+        DrawerLayout   mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout_product);
         if (id == R.id.menu_home) {
             mDrawerLayout.closeDrawers();
             openActivity(AllStoresActivity.class);
@@ -193,7 +193,8 @@ public class ProductActivity extends BaseActivity implements NavigationView.OnNa
 
 
         else if (id == R.id.menu_logout) {
-            MenuHandler.logOut(this);
+            mDrawerLayout.closeDrawers();
+            logOut();
         }
 
 

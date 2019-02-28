@@ -245,7 +245,8 @@ boolean IsCheckout=true;
 
 
         else if (id == R.id.menu_logout) {
-            MenuHandler.logOut(this);
+            mDrawerLayout.closeDrawers();
+            logOut();
         }
 
 

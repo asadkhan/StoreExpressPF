@@ -500,7 +500,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
 
         else if (id == R.id.menu_logout) {
-            MenuHandler.logOut(this);
+             mDrawerLayout.closeDrawers();
+             logOut();
         }
 
 

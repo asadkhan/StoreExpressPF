@@ -182,7 +182,8 @@ public class ProfileActivity extends BaseActivity implements NavigationView.OnNa
 
 
         else if (id == R.id.menu_logout) {
-            MenuHandler.logOut(this);
+            mDrawerLayout.closeDrawers();
+            logOut();
         }
 
 //         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -23,12 +23,12 @@ public class AllStoresActivity extends BaseActivity implements  View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.content_allstore);
-       /*
+        setContentView(R.layout.app_bar_allstore);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_allstore);
         setSupportActionBar(toolbar);
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_allstore);
-
+      //  DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_allstore);
+ /*
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);

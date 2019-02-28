@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.irfan.storeexpressagas.R;
 import com.example.irfan.storeexpressagas.abstract_classess.GeneralCallBack;
+import com.example.irfan.storeexpressagas.activities.AllStoresActivity;
 import com.example.irfan.storeexpressagas.activities.CartActivity;
 import com.example.irfan.storeexpressagas.activities.CheckOutFirstActivity;
 import com.example.irfan.storeexpressagas.activities.Login;
@@ -357,7 +358,7 @@ public class BaseActivity extends AppCompatActivity {
 
         DeviceDatabaseHandler databaseHelper = DeviceDatabaseHandler.getInstance(this);
         databaseHelper.removeCartItems();
-       // openActivity(Login.class);
+       openActivity(AllStoresActivity.class);
     }
 
     public static String RemoveSpecialChar(String input){
