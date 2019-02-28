@@ -52,7 +52,7 @@
             android:cursorVisible="true"
             android:hint="Verification Code"
             android:inputType="textPersonName"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="@color/black"
             android:textCursorDrawable="@null"
             android:textSize="14sp" />
 
@@ -73,7 +73,7 @@
             android:cursorVisible="true"
             android:hint="Create new Password"
             android:inputType="textPersonName"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="@color/black"
             android:textCursorDrawable="@null"
             android:textSize="14sp" />
 

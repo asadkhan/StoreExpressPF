@@ -52,7 +52,7 @@
             android:cursorVisible="true"
             android:hint="Email Address or Phone"
             android:inputType="textPersonName"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="@color/black"
             android:textCursorDrawable="@null"
             android:textSize="14sp" />
 
