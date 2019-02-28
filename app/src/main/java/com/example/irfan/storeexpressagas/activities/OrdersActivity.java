@@ -117,7 +117,8 @@ public class OrdersActivity extends BaseActivity implements NavigationView.OnNav
 
 
         else if (id == R.id.menu_logout) {
-            MenuHandler.logOut(this);
+           mDrawerLayout.closeDrawers();
+           logOut();
         }
 
         return  true;

@@ -86,7 +86,10 @@ public class Cart {
         return  databaseHelper.getCartTotalPrice();
     }
 
-
+    public static void clearCart(Context context){
+        DeviceDatabaseHandler databaseHelper = DeviceDatabaseHandler.getInstance(context);
+          databaseHelper.removeCartItems();
+    }
 
 
 }

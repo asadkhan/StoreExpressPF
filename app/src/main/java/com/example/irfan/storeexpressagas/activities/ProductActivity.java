@@ -193,7 +193,8 @@ public class ProductActivity extends BaseActivity implements NavigationView.OnNa
 
 
         else if (id == R.id.menu_logout) {
-            MenuHandler.logOut(this);
+            mDrawerLayout.closeDrawers();
+            logOut();
         }
 
 

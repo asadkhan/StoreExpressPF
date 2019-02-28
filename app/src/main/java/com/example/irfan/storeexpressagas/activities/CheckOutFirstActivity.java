@@ -250,7 +250,8 @@ public RadioButton rBtndelivery,rBtnPickUp;
 
 
         else if (id == R.id.menu_logout) {
-            MenuHandler.logOut(this);
+           mDrawerLayout.closeDrawers();
+           logOut();
         }
 
 //         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

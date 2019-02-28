@@ -118,7 +118,8 @@ public class AboutActivity extends BaseActivity implements NavigationView.OnNavi
 
 
         else if (id == R.id.menu_logout) {
-            MenuHandler.logOut(this);
+            mDrawerLayout.closeDrawers();
+            logOut();
 
         }
 

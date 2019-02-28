@@ -106,6 +106,10 @@ public void signIN(){
                            openActivity(ProfileActivity.class);
                            break;
 
+                           default:
+                               sharedperference.saveLogin("");
+                               openActivity(AllStoresActivity.class);
+                               break;
 
                    }
 
