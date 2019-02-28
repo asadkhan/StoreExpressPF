@@ -17,7 +17,7 @@
         <item name="android:background">?android:attr/listDivider</item>
     </style>
     <style name="NavDrawerTextStyle" parent="Base.TextAppearance.AppCompat">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/menu_grey</item>
         <item name="android:textStyle">bold</item>
     </style>
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

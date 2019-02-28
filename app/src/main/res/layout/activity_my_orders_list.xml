@@ -14,14 +14,13 @@
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view_orders"
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="match_parent"
         android:layout_gravity="left"
         android:background="#fff"
         android:fitsSystemWindows="true"
-        android:visibility="visible"
         app:headerLayout="@layout/nav_header"
-        app:itemIconTint="@color/black"
+        app:itemIconTint="@color/menu_grey"
         app:itemTextAppearance="@style/NavDrawerTextStyle"
         app:menu="@menu/activity_main_drawer" />
 
