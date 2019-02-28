@@ -93,7 +93,7 @@
                 android:id="@+id/TP"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#e8e8e8"
+                android:background="@color/drawer_bg"
                 android:orientation="vertical">
 
                 <LinearLayout

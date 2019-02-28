@@ -35,7 +35,7 @@ public class CartItemListAdapter extends RecyclerView.Adapter<CartItemListAdapte
 
             img = (ImageView) view.findViewById(R.id.cartitem_img);
             txtItemName = (TextView) view.findViewById(R.id.txt_cartitem_name);
-            txtQtyBox = (TextView) view.findViewById(R.id.txt_cartitem_qty_box);
+            txtQtyBox = (TextView) view.findViewById(R.id.txt_cartitem_qty_box2);
             txtItemPrice = (TextView) view.findViewById(R.id.txt_cartitem_price2);
             txtItemRemove = (TextView) view.findViewById(R.id.txt_cartitem_remove);
             btnPlus = (Button) view.findViewById(R.id.btn_cart_plus);
