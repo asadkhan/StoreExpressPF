@@ -81,7 +81,10 @@ public class Cart {
         DeviceDatabaseHandler databaseHelper = DeviceDatabaseHandler.getInstance(context);
         return  databaseHelper.getItemCount();
     }
-
+    public static int getCartTotalPrice(Context context){
+        DeviceDatabaseHandler databaseHelper = DeviceDatabaseHandler.getInstance(context);
+        return  databaseHelper.getCartTotalPrice();
+    }
 
 
 

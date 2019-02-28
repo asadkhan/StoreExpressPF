@@ -182,4 +182,33 @@ return cartItem;
         return count;
     }
 
+
+
+    public int getCartTotalPrice() {
+       int total=0;
+
+        // Select All Query
+        String selectQuery = "SELECT  * FROM " + TABLE_NAME ;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+
+
+                total=total+cursor.getInt(4);
+                Log.d("test",String.valueOf(cursor.getInt(4)));
+
+            } while (cursor.moveToNext());
+        }
+        if (cursor != null) {
+            cursor.close();
+        }
+        if (db != null) {
+            db.close();
+        }
+        // return contact list
+
+        return total;
+    }
 }

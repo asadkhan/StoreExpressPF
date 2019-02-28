@@ -74,6 +74,12 @@ public class ProductActivity extends BaseActivity implements NavigationView.OnNa
 
     }
 
+    public void UpdateCartCount(){
+        tv.setText(String.valueOf(Cart.getCartTotalItem(this)));
+
+
+    }
+
 
     @Override
     public void onClick(View v) {

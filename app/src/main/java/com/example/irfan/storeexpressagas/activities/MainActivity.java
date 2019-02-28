@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.irfan.storeexpressagas.Adapters.CategoryListAdapter;
 import com.example.irfan.storeexpressagas.Adapters.FproductListAdapter;
@@ -28,6 +29,7 @@ import com.example.irfan.storeexpressagas.databinding.*;
 import com.example.irfan.storeexpressagas.extras.AdapterCallback;
 import com.example.irfan.storeexpressagas.extras.DeviceDatabaseHandler;
 import com.example.irfan.storeexpressagas.extras.MenuHandler;
+import com.example.irfan.storeexpressagas.extras.UpdateCart;
 import com.example.irfan.storeexpressagas.models.Cart;
 import com.example.irfan.storeexpressagas.models.CategoryResponse;
 import com.example.irfan.storeexpressagas.models.FproductResponse;
@@ -57,7 +59,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         setContentView(R.layout.activity_shop_by_cate);
         //parentBinding = binding;
         //loadViews();
-        Log.d("test","calling test...");
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
        // toolbar.inflateMenu(R.menu.navigation_menu);
         setSupportActionBar(toolbar);
@@ -131,7 +133,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 break;
 
             case R.id.actionbar_notifcation_textview:
-                Log.d("test","show msg call");
+
                 //  showMessageDailogNextScreen("test","testing message",Login.class);
                 openActivity(CartActivity.class);
                 break;
@@ -143,7 +145,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
 @Override
     public void onClick(View view, int position) {
-        Log.d("test","Click iterface ");
+
        CategoryResponse.catValue cat = catList.get(position);
 
        if(cat.getName().toString().trim().equals("All")){
@@ -152,11 +154,11 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
        else {
            getProductsByCat(cat.getName());
        }
-       Log.d("test",cat.getName());
+
     }
     public void getCategories(){
         showProgress();
-        Log.d("test","intestCat");
+
         RestClient.getAuthAdapter().getCategories().enqueue(new GeneralCallBack<CategoryResponse>(this) {
             @Override
             public void onSuccess(CategoryResponse response) {
@@ -174,11 +176,11 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                     for(CategoryResponse.catValue obj : list){
 
 
-                        Log.d("test",obj.getName());
+
 
 
                         if(obj.getName().toString().trim().equals("All")) {
-                            Log.d("test","FOUND");
+
                             catList.add(obj);
                             break;
                         }
@@ -194,7 +196,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
 
                         if(obj2.getName().toString().trim().equals("All")) {
-                            Log.d("test","FOUND");
+
                             //catList.add(obj2);
 
                         }
@@ -246,7 +248,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             public void onFailure(Throwable throwable) {
                 //onFailure implementation would be in GeneralCallBack class
                 hideProgress();
-                Log.d("test","failed");
+
 
             }
 
@@ -260,14 +262,14 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     public void getFproducts(){
 
         showProgress();
-        Log.d("test","intestFproduct");
+
         RestClient.getAuthAdapter().getFeaturepProducts().enqueue(new GeneralCallBack<FproductResponse>(this) {
             @Override
             public void onSuccess(FproductResponse response) {
 
                 Gson gson = new Gson();
                 String Reslog= gson.toJson(response);
-                Log.d("test", Reslog);
+
                 producListTwoCol.clear();
 
                 if (!response.getIserror()) {
@@ -280,7 +282,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                             FproductTwoCol obj = new FproductTwoCol();
                             obj.ProductoneID=iList.get(i).getId();
 
-                            Log.d("test",String.valueOf(iList.get(i).getId()));
+
                             obj.ProductoneName=iList.get(i).getName();
                             obj.ProductonePrice=iList.get(i).getPrice();
                             obj.ProductoneImg= iList.get(i).getImage();
@@ -324,7 +326,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             public void onFailure(Throwable throwable) {
                 //onFailure implementation would be in GeneralCallBack class
                 hideProgress();
-                Log.d("test","failed");
+
 
             }
 
@@ -338,14 +340,14 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     public void getProductsByCat(String catName){
 
         showProgress();
-        Log.d("test","intestFproduct");
+
         RestClient.getAuthAdapter().getProductsByCat(catName).enqueue(new GeneralCallBack<FproductResponse>(this) {
             @Override
             public void onSuccess(FproductResponse response) {
 
                 Gson gson = new Gson();
                 String Reslog= gson.toJson(response);
-                Log.d("test", Reslog);
+
                 producListTwoCol.clear();
 
                 if (!response.getIserror()) {
@@ -358,7 +360,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                             FproductTwoCol obj = new FproductTwoCol();
                             obj.ProductoneID=iList.get(i).getId();
 
-                            Log.d("test",String.valueOf(iList.get(i).getId()));
+
                             obj.ProductoneName=iList.get(i).getName();
                             obj.ProductonePrice=iList.get(i).getPrice();
                             obj.ProductoneImg= iList.get(i).getImage();
@@ -375,7 +377,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                                 obj.ProducttwoID=iList.get(i+1).getId();
                                 obj.ProducttwoDesc=iList.get(i+1).getDescription().toString();
 
-                                Log.d("test",iList.get(i+1).getDescription().toString());
+
 
 
                             }
@@ -406,7 +408,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             public void onFailure(Throwable throwable) {
                 //onFailure implementation would be in GeneralCallBack class
                 hideProgress();
-                Log.d("test","failed");
 
             }
 
@@ -417,7 +418,12 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     }
 
 
+    public void UpdateCardCount(){
+        tv.setText(String.valueOf(Cart.getCartTotalItem(this)));
+        Toast.makeText(getApplicationContext(), String.valueOf(Cart.getCartTotalItem(this)),
+                Toast.LENGTH_LONG).show();
 
+    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override

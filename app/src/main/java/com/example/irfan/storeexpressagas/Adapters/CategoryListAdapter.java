@@ -77,6 +77,8 @@ public int row_index=-1;
 
         mContext = parent.getContext();
 
+
+
         return new ListViewHolder(itemView);
     }
 

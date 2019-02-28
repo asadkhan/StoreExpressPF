@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.irfan.storeexpressagas.R;
+import com.example.irfan.storeexpressagas.activities.CartActivity;
+import com.example.irfan.storeexpressagas.activities.MainActivity;
 import com.example.irfan.storeexpressagas.models.Cart;
 import com.example.irfan.storeexpressagas.models.CategoryResponse;
 import com.squareup.picasso.Picasso;
@@ -70,7 +72,7 @@ public class CartItemListAdapter extends RecyclerView.Adapter<CartItemListAdapte
                     itemList.remove(newPosition);
                     notifyItemRemoved(newPosition);
                     notifyItemRangeChanged(newPosition, itemList.size());
-
+                    ((CartActivity) view.getContext()).UpdateCardCount();
                     break;
 
 

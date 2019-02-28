@@ -88,7 +88,7 @@ getCategories();
 
     @Override
     public void onClick(View v) {
-        Log.d("test","click");
+       
 
 
             switch (v.getId()) {
@@ -187,7 +187,7 @@ getCategories();
     public void getCategories(){
 
         showProgress();
-        Log.d("test","intest");
+
         RestClient.getAuthAdapter().getCategories().enqueue(new GeneralCallBack<CategoryResponse>(this) {
             @Override
             public void onSuccess(CategoryResponse response) {
@@ -202,8 +202,7 @@ getCategories();
                     List<CategoryResponse.catValue> list = response.getValue();
                     for(CategoryResponse.catValue obj : list){
 
-                        Log.d("test",obj.getName());
-                        Log.d("test",obj.getImage());
+
                         catList.add(obj);
                     }
 
@@ -227,7 +226,7 @@ getCategories();
             public void onFailure(Throwable throwable) {
                 //onFailure implementation would be in GeneralCallBack class
                 hideProgress();
-                Log.d("test","failed");
+
 
             }
 

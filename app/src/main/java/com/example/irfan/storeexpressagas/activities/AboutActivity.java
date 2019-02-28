@@ -128,7 +128,7 @@ public class AboutActivity extends BaseActivity implements NavigationView.OnNavi
                 break;
 
             case R.id.actionbar_notifcation_textview:
-                
+
                 //  showMessageDailogNextScreen("test","testing message",Login.class);
                 openActivity(CartActivity.class);
                 break;

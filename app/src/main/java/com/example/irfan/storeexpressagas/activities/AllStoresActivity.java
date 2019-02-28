@@ -46,7 +46,7 @@ public class AllStoresActivity extends BaseActivity implements NavigationView.On
 
     @Override
     public void onClick(View v) {
-        Log.d("test","click");
+
 
 
         switch (v.getId()) {
@@ -55,7 +55,7 @@ public class AllStoresActivity extends BaseActivity implements NavigationView.On
                 break;
 
             case R.id.txt_shazz:
-                Log.d("test","show msg call");
+
                 //  showMessageDailogNextScreen("test","testing message",Login.class);
                 openActivity(MainActivity.class);
                 break;

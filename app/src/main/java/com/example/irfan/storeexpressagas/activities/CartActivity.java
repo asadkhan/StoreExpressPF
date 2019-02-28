@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.irfan.storeexpressagas.Adapters.CartItemListAdapter;
 import com.example.irfan.storeexpressagas.Adapters.CategoryListAdapter;
@@ -40,7 +41,7 @@ public class CartActivity extends BaseActivity implements NavigationView.OnNavig
 
     public PrefManager sharedperference;
     public List<Cart> cartItemList = new ArrayList<>();
-    public TextView tv;
+    public TextView tv,txt_totalItem,txt_totalprice;
     public ImageView i;
 
 
@@ -63,6 +64,9 @@ public class CartActivity extends BaseActivity implements NavigationView.OnNavig
         navigationView.setNavigationItemSelectedListener(this);
 
         recyclerViewCart = (RecyclerView) findViewById(R.id.recycler_view_cart);
+        txt_totalItem=(TextView) findViewById(R.id.txt_totalItem);
+        txt_totalprice=(TextView) findViewById(R.id.txt_totalprice);
+
 
         mAdapterCart = new CartItemListAdapter(this.cartItemList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -77,11 +81,14 @@ public class CartActivity extends BaseActivity implements NavigationView.OnNavig
         recyclerViewCart.setAdapter(this.mAdapterCart);
         getCart();
         btnCheckout.setOnClickListener(this);
+        txt_totalItem.setText(String.valueOf(Cart.getCartTotalItem(this)));
+        Log.d("test",String.valueOf(String.valueOf(Cart.getCartTotalPrice(this))));
+        txt_totalprice.setText(String.valueOf(Cart.getCartTotalPrice(this)));
     }
 
     @Override
     public void onClick(View v) {
-        Log.d("test","click");
+
         switch (v.getId()) {
             case R.id.btn_checkout:
 
@@ -92,7 +99,7 @@ public class CartActivity extends BaseActivity implements NavigationView.OnNavig
                 break;
 
             case R.id.actionbar_notifcation_textview:
-                Log.d("test","show msg call");
+
                 //  showMessageDailogNextScreen("test","testing message",Login.class);
                 openActivity(CartActivity.class);
                 break;
@@ -102,6 +109,12 @@ public class CartActivity extends BaseActivity implements NavigationView.OnNavig
 
     }
 
+    public void UpdateCardCount(){
+        tv.setText(String.valueOf(Cart.getCartTotalItem(this)));
+        txt_totalItem.setText(String.valueOf(Cart.getCartTotalItem(this)));
+        txt_totalprice.setText(String.valueOf(Cart.getCartTotalPrice(this)));
+
+    }
 
     public void checkOut(){
         Intent i;
@@ -207,7 +220,7 @@ public class CartActivity extends BaseActivity implements NavigationView.OnNavig
        // cartItemList=cartlst;
 
         for(Cart obj : cartlst){
-            Log.d("test","OBJ"+obj.ItemName);
+
             Cart t = new Cart();
             t.ItemQty=obj.ItemQty;
             t.ItemID=obj.ItemID;
@@ -232,6 +245,7 @@ public class CartActivity extends BaseActivity implements NavigationView.OnNavig
         tv = (TextView) notifCount.findViewById(R.id.actionbar_notifcation_textview);
         //tv.setText("12");
         tv.setText(String.valueOf(Cart.getCartTotalItem(this)));
+
         i.setOnClickListener(this);
         tv.setOnClickListener(this);
         return super.onCreateOptionsMenu(menu);

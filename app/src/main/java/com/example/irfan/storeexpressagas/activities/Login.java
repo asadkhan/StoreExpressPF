@@ -24,7 +24,7 @@ public class Login  extends BaseActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Log.d("test","in");
+
         Btn_signup = (Button) findViewById(R.id.btn_signup);
 
         Txt_email = (EditText) findViewById(R.id.txt_email);
@@ -44,7 +44,7 @@ public class Login  extends BaseActivity implements View.OnClickListener {
     }
     @Override
     public void onClick(View v) {
-        Log.d("test","click");
+
         switch (v.getId()) {
             case R.id.btn_signup:
 
@@ -53,10 +53,10 @@ public class Login  extends BaseActivity implements View.OnClickListener {
                 break;
 
             case R.id.btn_login:
-                Log.d("test","clog");
+
                 if(isValidate()){
                     signIN();
-                    Log.d("test","clogv");
+
                 }
                                 break;
 
@@ -76,7 +76,7 @@ public class Login  extends BaseActivity implements View.OnClickListener {
 public void signIN(){
 
     showProgress();
-       Log.d("test", "intest");
+
        RestClient.getAuthAdapter().loginUser(Txt_email.getText().toString(), Txt_password.getText().toString(), "password").enqueue(new GeneralCallBack<LoginResponse>(this) {
            @Override
            public void onSuccess(LoginResponse response) {
@@ -129,7 +129,7 @@ public void signIN(){
                        Toast.LENGTH_LONG).show();
 
                hideProgress();
-               Log.d("test", "failed");
+
 
            }
 

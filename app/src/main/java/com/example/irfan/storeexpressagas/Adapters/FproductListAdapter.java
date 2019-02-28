@@ -12,9 +12,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.irfan.storeexpressagas.R;
+import com.example.irfan.storeexpressagas.activities.MainActivity;
 import com.example.irfan.storeexpressagas.activities.ProductActivity;
 import com.example.irfan.storeexpressagas.baseclasses.BaseActivity;
 import com.example.irfan.storeexpressagas.extras.ActivityManager;
+import com.example.irfan.storeexpressagas.extras.UpdateCart;
 import com.example.irfan.storeexpressagas.models.Cart;
 import com.example.irfan.storeexpressagas.models.CategoryResponse;
 import com.example.irfan.storeexpressagas.models.FproductResponse;
@@ -25,7 +27,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class FproductListAdapter  extends RecyclerView.Adapter<FproductListAdapter.ListViewHolder>{
-
+    private UpdateCart listener;
     private List<FproductTwoCol> productsList;
     public class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public ImageView img1,img2;
@@ -128,6 +130,9 @@ public class FproductListAdapter  extends RecyclerView.Adapter<FproductListAdapt
                 //showMessageToast(view.getResources().getString(R.string.msg_add_to_car));
                 Toast.makeText(view.getContext(),view.getResources().getString(R.string.msg_add_to_car) ,
                         Toast.LENGTH_LONG).show();
+
+                ((MainActivity) view.getContext()).UpdateCardCount();
+
             }
 
             if(view.getId()==R.id.txt_AddTwo){
@@ -150,6 +155,7 @@ public class FproductListAdapter  extends RecyclerView.Adapter<FproductListAdapt
                 //showMessageToast(view.getResources().getString(R.string.msg_add_to_car));
                 Toast.makeText(view.getContext(),view.getResources().getString(R.string.msg_add_to_car) ,
                         Toast.LENGTH_LONG).show();
+                ((MainActivity) view.getContext()).UpdateCardCount();
             }
 
 
