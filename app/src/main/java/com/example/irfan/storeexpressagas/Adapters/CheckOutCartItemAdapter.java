@@ -20,7 +20,7 @@ public class CheckOutCartItemAdapter extends RecyclerView.Adapter<CheckOutCartIt
     private List<Cart> itemList;
     public class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        public TextView txtItemName,txtItemPrice;
+        public TextView txtItemName,txtItemPrice,txt_qty;
 
 
         private String mItem;
@@ -33,6 +33,8 @@ public class CheckOutCartItemAdapter extends RecyclerView.Adapter<CheckOutCartIt
             txtItemName = (TextView) view.findViewById(R.id.txt_item_name);
 
             txtItemPrice = (TextView) view.findViewById(R.id.txt_item_price);
+
+            txt_qty = (TextView) view.findViewById(R.id.txt_qty);
 
 
         }
@@ -71,10 +73,10 @@ public class CheckOutCartItemAdapter extends RecyclerView.Adapter<CheckOutCartIt
         Cart cartitem = itemList.get(position);
 
 
-        String name=cartitem.ItemName+ " X "+ String.valueOf(cartitem.ItemPrice);
+            String name=cartitem.ItemName+ " X "+ String.valueOf(cartitem.ItemQty);
         holder.txtItemName.setText(cartitem.ItemName);
-
-        holder.txtItemPrice.setText("Rs "+String.valueOf(cartitem.ItemPrice));
+        holder.txt_qty.setText(String.valueOf(cartitem.ItemQty)+" x ");
+        holder.txtItemPrice.setText(String.valueOf(cartitem.ItemPrice));
 
 
 
