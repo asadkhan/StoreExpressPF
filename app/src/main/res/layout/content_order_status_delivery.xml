@@ -110,14 +110,13 @@
                 android:id="@+id/main"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="20dip">
+                android:orientation="vertical">
 
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_view_orderstatusp_osd"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent" />
 
 
                 <LinearLayout

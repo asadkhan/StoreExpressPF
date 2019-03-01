@@ -14,12 +14,20 @@
         android:orientation="horizontal"
         android:paddingBottom="5dp"
         android:paddingTop="5dp"
-        android:weightSum="5">
+        android:weightSum="10">
+
+        <TextView
+            android:id="@+id/txt_qty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="999"
+            android:textColor="#555455" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="4"
+            android:layout_weight="10"
             android:orientation="horizontal">
 
             <TextView
@@ -37,15 +45,16 @@
                 android:layout_centerInParent="false"
                 android:layout_centerVertical="false"
                 android:layout_marginEnd="20dp"
+                android:maxLines="3"
+                android:minLines="1"
                 android:text="@string/checkout_opt"
-                android:textColor="#000000"
+                android:textColor="#555455"
                 android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:orientation="horizontal">
 
             <TextView
@@ -64,7 +73,7 @@
                 android:gravity="end"
                 android:text="Rs. "
                 android:textAllCaps="false"
-                android:textColor="#000000"
+                android:textColor="#555455"
                 android:textSize="12sp" />
 
             <TextView
@@ -82,18 +91,11 @@
                 android:layout_centerVertical="false"
                 android:maxLines="1"
                 android:minLines="1"
-                android:text="1000"
+                android:text="900000"
                 android:textAllCaps="false"
-                android:textColor="#000000"
+                android:textColor="#555455"
                 android:textSize="12sp" />
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/txt_qty"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.5"
-            android:text="TextView" />
 
     </LinearLayout>
 </LinearLayout>
