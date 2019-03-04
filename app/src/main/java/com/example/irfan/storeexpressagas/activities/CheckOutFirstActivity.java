@@ -192,7 +192,7 @@ public RadioButton rBtndelivery,rBtnPickUp;
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        DrawerLayout   mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout_cart);
+        DrawerLayout   mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout_checkoutF);
        if (id == R.id.menu_home) {
             mDrawerLayout.closeDrawers();
             openActivity(AllStoresActivity.class);
