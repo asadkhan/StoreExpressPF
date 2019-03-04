@@ -165,7 +165,11 @@ EditText Txt_name,Txt_phone,Txt_email,Txt_password;
     }
 
 
+    @Override
+    public void onBackPressed() {
 
+        openActivity(Login.class);
+    }
 
 
 }

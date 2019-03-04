@@ -217,4 +217,11 @@ getCart();
         return super.onCreateOptionsMenu(menu);
     }
 
+
+    @Override
+    public void onBackPressed() {
+
+     openActivity(AllStoresActivity.class);
+         }
+
 }

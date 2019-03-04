@@ -126,7 +126,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
 
 
-
+//Log.d("test",sharedperference.getToken());
         // test();
 
         getCategories();

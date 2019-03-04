@@ -148,6 +148,13 @@ public void signIN(){
 
 
 
+    @Override
+    public void onBackPressed() {
+
+        openActivity(AllStoresActivity.class);
+    }
+
+
 }
 
 

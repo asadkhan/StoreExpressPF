@@ -161,4 +161,11 @@ public class OrdersActivity extends BaseActivity implements NavigationView.OnNav
         return super.onCreateOptionsMenu(menu);
     }
 
+
+    @Override
+    public void onBackPressed() {
+
+        openActivity(MainActivity.class);
+    }
+
     }
