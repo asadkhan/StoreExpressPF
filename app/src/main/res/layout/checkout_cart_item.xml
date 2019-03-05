@@ -4,7 +4,9 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingEnd="10dp"
-    android:paddingStart="10dp">
+    android:paddingStart="10dp"
+    android:id="@+id/layout_color"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"

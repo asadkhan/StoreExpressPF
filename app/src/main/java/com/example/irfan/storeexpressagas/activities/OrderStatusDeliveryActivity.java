@@ -70,7 +70,7 @@ public Button btnOders;
 
         recyclerViewCheckoutItem = (RecyclerView) findViewById(R.id.recycler_view_orderstatusp_osd);
 
-        mAdapterCheckoutitem = new CheckOutCartItemAdapter(this.cartItemList);
+        mAdapterCheckoutitem = new CheckOutCartItemAdapter(this.cartItemList,this);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
 
         // RecyclerView.ItemDecoration itemDecoration =

@@ -1,5 +1,9 @@
 package com.example.irfan.storeexpressagas.Adapters;
 
+import android.app.Application;
+import android.content.Context;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -7,9 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.irfan.storeexpressagas.R;
+import com.example.irfan.storeexpressagas.baseclasses.BaseActivity;
 import com.example.irfan.storeexpressagas.models.Cart;
 import com.squareup.picasso.Picasso;
 
@@ -18,10 +24,12 @@ import java.util.List;
 public class CheckOutCartItemAdapter extends RecyclerView.Adapter<CheckOutCartItemAdapter.ListViewHolder> {
 
     private List<Cart> itemList;
+    Context c;
+
     public class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView txtItemName,txtItemPrice,txt_qty;
-
+        public LinearLayout layout_color;
 
         private String mItem;
         private TextView mTextView;
@@ -29,7 +37,7 @@ public class CheckOutCartItemAdapter extends RecyclerView.Adapter<CheckOutCartIt
             super(view);
             view.setOnClickListener(this);
 
-
+            layout_color =(LinearLayout) view.findViewById(R.id.layout_color);
             txtItemName = (TextView) view.findViewById(R.id.txt_item_name);
 
             txtItemPrice = (TextView) view.findViewById(R.id.txt_item_price);
@@ -53,9 +61,9 @@ public class CheckOutCartItemAdapter extends RecyclerView.Adapter<CheckOutCartIt
 
 
 
-    public CheckOutCartItemAdapter(List<Cart> itemlist) {
+    public CheckOutCartItemAdapter(List<Cart> itemlist,Context C) {
         this.itemList = itemlist;
-
+        c=C;
     }
 
 
@@ -68,6 +76,7 @@ public class CheckOutCartItemAdapter extends RecyclerView.Adapter<CheckOutCartIt
         return new CheckOutCartItemAdapter.ListViewHolder(itemView);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onBindViewHolder(CheckOutCartItemAdapter.ListViewHolder holder, int position) {
         Cart cartitem = itemList.get(position);
@@ -78,7 +87,14 @@ public class CheckOutCartItemAdapter extends RecyclerView.Adapter<CheckOutCartIt
         holder.txt_qty.setText(String.valueOf(cartitem.ItemQty)+" x ");
         holder.txtItemPrice.setText(String.valueOf(cartitem.ItemPrice));
 
+        if(BaseActivity.isOdd(position)) {
+            holder.layout_color.setBackgroundColor(c.getResources().getColor(R.color.light_grey));
+        }
+        else{
 
+
+
+        }
 
         // formatting the date appropriately.
 

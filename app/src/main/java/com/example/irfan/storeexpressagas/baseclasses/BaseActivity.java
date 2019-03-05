@@ -369,4 +369,7 @@ public class BaseActivity extends AppCompatActivity {
         return output;
     }
 
+
+
+    public  static boolean isOdd( int val ) { return (val & 0x01) != 0; }
 }

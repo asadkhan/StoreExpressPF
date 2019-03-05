@@ -123,7 +123,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         recyclerViewFProduct.setAdapter(this.mAdapterFproduct);
 
 
-
+Log.d("test",sharedperference.getToken());
 
 
 //Log.d("test",sharedperference.getToken());

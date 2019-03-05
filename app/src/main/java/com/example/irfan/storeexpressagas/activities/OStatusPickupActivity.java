@@ -69,7 +69,7 @@ public class OStatusPickupActivity extends BaseActivity implements NavigationVie
         }
         recyclerViewCheckoutItem = (RecyclerView) findViewById(R.id.recycler_view_orderstatusp);
 
-        mAdapterCheckoutitem = new CheckOutCartItemAdapter(this.cartItemList);
+        mAdapterCheckoutitem = new CheckOutCartItemAdapter(this.cartItemList,this);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
 
         // RecyclerView.ItemDecoration itemDecoration =

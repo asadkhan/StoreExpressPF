@@ -94,7 +94,7 @@ public RadioButton rBtndelivery,rBtnPickUp;
 
         recyclerViewCheckoutItem = (RecyclerView) findViewById(R.id.recycler_view_checkoutItem);
 
-        mAdapterCheckoutitem = new CheckOutCartItemAdapter(this.cartItemList);
+        mAdapterCheckoutitem = new CheckOutCartItemAdapter(this.cartItemList,this);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
 
         // RecyclerView.ItemDecoration itemDecoration =
