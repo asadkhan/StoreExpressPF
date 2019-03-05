@@ -88,11 +88,13 @@ public class CheckOutCartItemAdapter extends RecyclerView.Adapter<CheckOutCartIt
         holder.txtItemPrice.setText(String.valueOf(cartitem.ItemPrice));
 
         if(BaseActivity.isOdd(position)) {
-            holder.layout_color.setBackgroundColor(c.getResources().getColor(R.color.light_grey));
+            Log.d("test","ODD");
+            Log.d("test",String.valueOf(position));
+            holder.layout_color.setBackgroundColor(c.getResources().getColor(R.color.grey_bg));
         }
         else{
 
-
+            holder.layout_color.setBackgroundColor(c.getResources().getColor(R.color.colorAccent));
 
         }
 
