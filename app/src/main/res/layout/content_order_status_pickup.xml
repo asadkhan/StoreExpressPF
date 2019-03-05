@@ -275,8 +275,7 @@
             android:layout_below="@+id/divider900"
             android:gravity="center"
             android:orientation="vertical"
-            android:paddingBottom="20dp"
-            android:paddingTop="20dp">
+            android:paddingBottom="20dp">
 
             <Button
                 android:id="@+id/btn_openorders"
