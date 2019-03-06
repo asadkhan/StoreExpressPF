@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="7"
             android:gravity="top|left"
-            android:text="@string/checkout_add"
+            android:text="9876 5432 1234 5678"
             android:textColor="@color/darkGrey"
             android:textSize="14sp"
             android:textStyle="normal" />
