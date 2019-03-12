@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="?attr/actionBarSize"
     android:orientation="vertical">
 
 
@@ -70,8 +71,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Add a new location >"
-                    android:textColor="@color/colorPrimary" />
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Add a new location"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -100,91 +105,22 @@
                 android:layout_margin="15dip"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <include
+                    layout="@layout/item_card_number"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="15dip"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
-
-                    <RadioButton
-                        android:id="@+id/radioButton3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.05"
-                        android:buttonTint="@color/colorPrimary"
-                        android:paddingLeft="10dip"
-                        android:text="@null" />
-
-                    <TextView
-                        android:id="@+id/textView9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.8"
-                        android:gravity="top|left"
-                        android:text="Cash on Delivery"
-                        android:textColor="@color/darkGrey"
-                        android:textSize="12sp"
-                        android:textStyle="normal" />
-
-                    <TextView
-                        android:id="@+id/textView14"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.05"
-                        android:gravity="top|right"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="12sp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="15dip"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
-
-                    <RadioButton
-                        android:id="@+id/radioButton3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.05"
-                        android:buttonTint="@color/colorPrimary"
-                        android:paddingLeft="10dip"
-                        android:text="@null" />
-
-                    <TextView
-                        android:id="@+id/textView9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.8"
-                        android:gravity="top|left"
-                        android:text="Credit Card / Debit Card"
-                        android:textColor="@color/darkGrey"
-                        android:textSize="12sp"
-                        android:textStyle="normal" />
-
-                    <TextView
-                        android:id="@+id/textView13"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.05"
-                        android:gravity="top|right"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="12sp" />
-
-                </LinearLayout>
+                    android:layout_height="wrap_content" />
 
                 <TextView
                     android:id="@+id/textView15"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Add a new Debit / Creadit Card >"
-                    android:textColor="@color/colorPrimary" />
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Add a new Debit / Creadit Card"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -198,7 +134,9 @@
                     android:id="@+id/btn_finish"
                     android:layout_width="300dip"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:background="@drawable/border_radius_red"
+                    android:stateListAnimator="@null"
                     android:text="FINISH"
                     android:textColor="@color/colorAccent"
                     android:textSize="14sp" />
