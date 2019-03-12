@@ -66,8 +66,13 @@ public class ProfileActivity extends BaseActivity implements NavigationView.OnNa
             target.setVisible(true);
         }
 
-        test();
+      //  test();
     }
+
+
+
+
+
 
 
 

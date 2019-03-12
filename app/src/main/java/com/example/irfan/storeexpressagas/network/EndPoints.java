@@ -11,4 +11,5 @@ public class EndPoints {
     static final String PRODUCTBYCAT=API_PREFIX+"item/GetItem";
     static final String PLACEORDER=API_PREFIX+"order/placeorder";
     static final String ADRESSES=API_PREFIX+"useraddress/getuseraddresses";
+    static final String GETPROFILE=API_PREFIX+"accounts/getprofile";
 }
