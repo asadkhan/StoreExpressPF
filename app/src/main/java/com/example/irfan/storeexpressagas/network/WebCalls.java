@@ -62,4 +62,9 @@ public interface WebCalls {
     @POST(EndPoints.REGISTRATION)
     Call<GResponse> registerUser(@Body RegistrationRequest regUser);
 
+
+    @GET(EndPoints.GETPROFILE)
+    Call<ProfileResponse> getUserProfile();
+
+
 }
