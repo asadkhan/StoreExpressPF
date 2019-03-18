@@ -46,10 +46,10 @@ public class SplashScreen extends BaseActivity {
                 Intent i;
 
                 if(sharedperference.getToken()==null || sharedperference.getToken()=="") {
-                    i = new Intent(SplashScreen.this, AllStoresActivity.class);
+                    i = new Intent(SplashScreen.this, MainActivity.class);
                 }
                 else{
-                    i = new Intent(SplashScreen.this, AllStoresActivity.class);
+                    i = new Intent(SplashScreen.this, MainActivity.class);
 
                 }
 

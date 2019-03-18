@@ -102,7 +102,7 @@ public int row_index=-1;
         else
         {
             holder.txtCatName.setTypeface(null, Typeface.NORMAL);
-            holder.catImg.setColorFilter(Color.argb(255, 13, 92, 173));
+            holder.catImg.setColorFilter(Color.argb(255, 123, 71, 182));
             holder.catImg.setBackground(mContext.getResources().getDrawable(R.drawable.circle_btn,null));
            // holder.txtCatName.setBackgroundColor(Color.parseColor("#ffffff"));
            // holder.catImg.setTextColor(Color.parseColor("#000000"));
